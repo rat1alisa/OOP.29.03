@@ -1,80 +1,86 @@
 # OOP.29.03
+
 #include <iostream>
-#include <iomanip>
 using namespace std;
 
 class Fraction
 {
-public:    
-   int numerator;
-   int denominator;
-   int newnum;
-   int newdeno;
-   void input()
-   {
-       cin >> numerator >> denominator;
-   }
-   void print()
-   {
-       cout << endl;
-       cout << numerator << "/" << denominator;
-   }
-   void addition(int a, int b)
-   {
-       newnum = (numerator * y) + (denominator * x);
-       newdeno = denominator * y;
-       cout << "Sum = " << newnum << "/" << newdeno;
-   }
-   void subtraction()
-   {
-       
-   }
-   void multiplication()
-   {
-       
-   }
-   void division()
-   {
-       
-   }
+public:
+	int a, b;
+	int c, d;
+	int e, f;
+	void Output()
+	{
+		cout << "Enter values for the first fraction: " << endl;
+		cout << "\tNumerator - ";
+		cin >> a;
+		cout << "\tDenominator - ";
+		cin >> b;
+		cout << "Enter values for the second fraction:" << endl;
+		cout << "\tNumerator - ";
+		cin >> c;
+		cout << "\tDenominator - ";
+		cin >> d;
+	}
+	
+	void Addition()
+	{
+		e = (a*d) + (b*c);
+		f = b*d;
+		cout << a << "/" << b << " + " << c << "/" << d << " = " << e << "/" << f << endl;
+	}
+	void Subtraction()
+	{
+		e = (a*d) - (b * c);
+		f = b*d;
+		cout << a << "/" << b << " - " << c << "/" << d << " = " << e << "/" << f << endl;
+	}
+	void Multiplication()
+	{
+		e = (a*d) / (b*c);
+		f = b*d;
+		cout << a << "/" << b << " * " << c << "/" << d << " = " << e << "/" << f << endl;
+
+	}
+	void Division()
+	{
+		e = (a*d) * (b*c);
+		f = b*d;
+		cout << a << "/" << b << " / " << c << "/" << d << " = " << e << "/" << f << endl;
+	}
 };
 
 int main()
 {
-    Fraction first;
-    Fraction second;
-    cout << "First fraction: ";
-    first.input();
-    cout << "Second fraction: ";
-    second.input();
-    //-------------------
-    cout << "Enter the required operation - " << endl;
-        cout << "1. Addition" << endl;
-        cout << "2. Subtraction" << endl;
-        cout << "3. Multiplication" << endl;
-        cout << "4. Division" << '\n';
-        cin >> m;
-        switch (m)
-        {
-        case 1:
-            first.addition(a);
-            break;
-        case 2:
-            first.sbtraction(a);
-            break;
-        case 3: 
-            first.multiplication(a);
-            break;
-        case 4:  
-            first.division(a);
-            break;
-        default: 
-            cout << "Error" << endl;
-        }
-    //-------------------
-    first.print();
-    second.print();
-    int x = second.numerator;
-    int y = second.denominator;
-    first.addition(x, y);
+	Fraction fraction;
+	fraction.Output();
+	int a;
+	do {
+		cout << "\n1. Addition.";
+		cout << "\n2. Substraction.";
+		cout << "\n3. Multiplication.";
+		cout << "\n4. Division." << endl;
+		cout << "\nSelect the required operation - ";
+		cin >> a;
+		switch (a)
+		{
+		case 1: (a = 1);
+			fraction.Addition();
+			break;
+		case 2: (a = 2);
+			fraction.Subtraction();
+			break;
+		case 3: (a = 3);
+			fraction.Multiplication();
+			break;
+		case 4: (a = 4);
+			fraction.Division();
+			break;
+		case 5: (a = 5);
+			break;
+		}
+	}
+	while (a != 5);
+	    cout << "Programm stopped.\n";
+	return 0;
 }
